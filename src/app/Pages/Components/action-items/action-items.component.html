@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block require">
+      <div class="block-heading" >Items Requiring Action</div>
+      <div class="block-control">
+      </div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" style=""></div>
+        <div class="require-action-list jquery-scroll ng-isolate-scope mb-scroller" data-scrollbar="true" tabindex="-1">
+          <div class="scroll-content">
+            <div ng-transclude="">
+              <ul class="list-unstyled ng-scope font-size-mybos" *ngIf="actionItems">
+                <li class="ng-scope" href="#" style="">
+                  <i class="mb-ico ico-wrench"></i>
+                  Overdue Cases
+                  <span class="pull-right ng-binding"> {{ actionItems.overdue_case }} </span>
+                </li>
+                <li class="ng-scope" href="#!/contractor/expire">
+                  <i class="mb-ico ico-contractors"></i>
+                  Contractor Document/Insurance Expiring
+                  <span class="pull-right ng-binding"> {{ actionItems.insurance_expiring }} </span>
+                </li>
+                <li class="ng-scope" href="#!/residents/update-request">
+                  <i class="mb-ico ico-user"></i>
+                  Resident Information Update Requests
+                  <span class="pull-right ng-binding"> {{ actionItems.resident_update }} </span>
+                </li>
+                <li class="ng-scope" href="#!/maintenance/overdue">
+                  <i class="mb-ico ico-maintenance"></i>
+                  Overdue Maintenance Schedules
+                  <span class="pull-right ng-binding"> {{ actionItems.overdue_maintenance }} </span>
+                </li>
+                <li class="ng-scope" href="#!/community/booking/pending">
+                  <i class="mb-ico ico-calendar"></i>
+                  Pending Bookings
+                  <span class="pull-right ng-binding"> {{ actionItems.pending_booking }} </span>
+                </li>
+                <li class="ng-scope" href="#!/community/maintenance">
+                  <i class="mb-ico ico-wrench"></i>
+                  Maintenance Requests
+                  <span class="pull-right ng-binding">113</span>
+                </li>
+                <li class="ng-scope" href="#!/asset/expire">
+                  <i class="mb-ico ico-wrench"></i>
+                  Asset Warranty Expiring
+                  <span class="pull-right ng-binding">{{ actionItems.warranty_expiring }} </span>
+                </li>
+                <li class="ng-scope" href="#!/residents/request">
+                  <i class="mb-ico ico-user"></i>
+                  Resident Requests
+                  <span class="pull-right ng-binding">1</span>
+                </li>
+                <li class="ng-scope" href="#!/residents/document-expired">
+                  <i class="mb-ico ico-user"></i>
+                  Apartment Insurance Expired
+                  <span class="pull-right ng-binding">17</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

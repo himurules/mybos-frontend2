@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block work-order">
+      <div class="block-heading">Latest Work Orders Sent</div>
+      <div class="alert alert-danger text-center" [hidden]="!error">
+        {{ error }}
+      </div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" ng-show="reportLoading" style=""></div>
+        <div class="require-action-list jquery-scroll ng-isolate-scope mb-scroller"  tabindex="-1" (scroll)="onScroll($event)">
+          <div class="scroll-content">
+            <div ng-transclude="">
+              <table class="full-width no-hover ng-scope">
+                <tbody>
+                <tr class="ng-scope" style="" *ngFor="let workOrder of workOrders let i = index">
+                  <td><i class="mb-ico ico-pdf-circle"></i></td>
+                  <td class="text-white">{{ workOrder.wo_number }}</td>
+                  <td><span class="bg ng-binding">{{workOrder.contractors.name}}</span></td>
+                  <td class="hide-on-1400"><span class="bg ng-binding">Sent: {{workOrder.created_at | date }}</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

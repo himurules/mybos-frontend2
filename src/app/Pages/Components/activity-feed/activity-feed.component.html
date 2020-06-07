@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block activity">
+      <div class="block-heading">
+        Activity Feed
+        <div class="block-control">
+        </div>
+      </div>
+      <div class="alert alert-danger text-center" [hidden]="!error">
+        {{ error }}
+      </div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" ng-show="activityLoading" style=""></div>
+        <div class="activity-list jquery-scroll ng-isolate-scope mb-scroller" action="#" data-scrollbar="true" tabindex="-1" (scroll)="onScroll($event)">
+          <div class="scroll-content">
+            <div ng-transclude="">
+              <ul class="list-unstyled ng-scope">
+                <li ng-repeat="(dateTime,logs) in activityLogs track by $index" class="ng-scope" style="">
+                  <p class="activity-time"><strong class="ng-binding">04/06/2020</strong></p>
+                  <ul class="list-unstyled">
+                    <li class="activity-item ng-binding ng-scope" *ngFor="let feed of activityFeed let i = index">
+                      {{ feed.created_at | date:'shortTime' }} - {{ feed.feed }} - {{ feed.users.name}}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

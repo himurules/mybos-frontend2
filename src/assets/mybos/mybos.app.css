@@ -1,0 +1,99 @@
+@import 'icon.min.css';
+@import url('https://app.mybos.com/assets/css/layout.min.css');
+@import url('https://app.mybos.com/assets/css/table.min.css');
+@import url('https://app.mybos.com/assets/css/conversation.min.css');
+@import url('https://app.mybos.com/assets/css/dashboard.min.css');
+@import url('https://app.mybos.com/assets/css/case.min.css');
+@import url('https://app.mybos.com/assets/css/schedule.min.css');
+@import url('https://app.mybos.com/assets/css/building.min.css');
+@import url('https://app.mybos.com/assets/css/resident.min.css');
+@import url('https://app.mybos.com/assets/css/key.min.css');
+@import url('https://app.mybos.com/assets/css/parcel.min.css');
+.app-lock{position:absolute;top:0;left:0;bottom:0;right:0;height:100%;width:100%;z-index:9999 !important;opacity:.4;background:url("https://app.mybos.com/assets/img/ajax-loader.gif") no-repeat center #fff}.app-lock.no-spin{background:#FFF}.save-progress{z-index:10000 !important;position:fixed;top:50%;left:50%;height:150px;width:300px;margin-left:-150px;margin-top:-75px;background-color:#fff;border:1px solid #e1e1e1;border-radius:3px;padding:5px}.app-content-loading{position:absolute;top:0;left:0;bottom:0;right:0;height:100%;width:100%;z-index:9999 !important;opacity:.4;background:url("https://app.mybos.com/assets/img/content-loading.gif") no-repeat center transparent}.app-init{background:url("https://app.mybos.com/assets/img/bg/transparent.png") repeat transparent;height:200px;width:500px;border:1px solid #fee;margin:100px auto 0 auto}
+[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-template-popup].popover{display:block !important;}
+uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}.uib-left,.uib-right{width:100%}
+.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll;}
+ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+[data-scrollbar] {
+  display: block;
+  position: relative;
+}
+
+.scroll-content {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.scrollbar-track {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  background: rgba(222, 222, 222, .75);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.5s 0.5s ease-out;
+  transition: opacity 0.5s 0.5s ease-out;
+}
+.scrollbar-track.show,
+.scrollbar-track:hover {
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.scrollbar-track-x {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+.scrollbar-track-y {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+}
+.scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 4px;
+}
+body {
+  margin: 0 0 57px 0;
+  font-family: "Roboto",sans-serif;
+}
+
+
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1002;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.jquery-scroll{
+  overflow: hidden;
+}
+.jquery-scroll:hover {
+  overflow-y: scroll;
+}

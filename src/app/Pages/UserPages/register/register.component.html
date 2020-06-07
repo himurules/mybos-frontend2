@@ -1,0 +1,80 @@
+<div class="h-100 bg-premium-dark">
+  <div class="d-flex h-100 justify-content-center align-items-center">
+    <div class="mx-auto app-login-box col-md-8">
+      <div class="app-logo-inverse mx-auto mb-3"></div>
+      <div class="modal-dialog w-100">
+        <form #registerForm=ngForm (ngSubmit)="onSubmit()">
+          <div class="modal-content">
+          <div class="modal-body">
+            <h5 class="modal-title">
+              <h4 class="mt-2">
+                <div>Welcome,</div>
+                <span>It only takes a <span class="text-success">few seconds</span> to create your account</span></h4>
+            </h5>
+            <div class="divider"></div>
+            <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                 class="form-group">
+              <div><input id="email" type="email" placeholder="Enter email..." required="required"
+                          aria-required="true" class="form-control"
+                          aria-describedby="exampleInputGroup1__BV_description_" name="email" [(ngModel)]="form.email">
+                <small tabindex="-1" id="exampleInputGroup1__BV_description_" class="form-text text-muted">We'll never
+                  share your email with anyone else.
+                </small>
+              </div>
+              <div class="alert alert-danger text-center" [hidden]="!error.email">
+                {{ error.email }}
+              </div>
+            </div>
+            <div id="exampleInputGroup2" role="group" class="form-group">
+              <div>
+                <input id="name" type="text" placeholder="Enter username..." required="required"
+                          aria-required="true" class="form-control" [(ngModel)]="form.name" name="name">
+              </div>
+              <div class="alert alert-danger text-center" [hidden]="!error.name">
+                {{ error.name }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div id="exampleInputGroup3" role="group" class="form-group">
+                  <div><input id="password" type="password" placeholder="Enter password..." required="required"
+                              aria-required="true" class="form-control" [(ngModel)]="form.password" name="password"></div>
+                  <div class="alert alert-danger text-center" [hidden]="!error.password">
+                    {{ error.password }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="exampleInputGroup4" role="group" class="form-group">
+                  <div><input id="password_confirmation" type="password" placeholder="Repeat password..." required="required"
+                              aria-required="true" class="form-control" [(ngModel)]="form.password_confirmation" name="password_confirmation"></div>
+                </div>
+              </div>
+            </div>
+            <div class="custom-control custom-checkbox"><input id="exampleCheck" type="checkbox" name="check"
+                                                               autocomplete="off" class="custom-control-input"
+                                                               value="true"><label for="exampleCheck"
+                                                                                   class="custom-control-label">
+              Accept our <a [routerLink]="">Terms and Conditions</a>.
+            </label></div>
+            <div class="divider"></div>
+            <h6 class="mb-0">
+              Already have an account?
+              <a routerLink="/login" class="text-primary">Sign in</a>
+              |
+              <a routerLink="/forgot-password" class="text-primary">Recover
+                Password</a></h6></div>
+          <div class="modal-footer d-block text-center">
+            <button  type="submit"
+                    class="btn btn-wide btn-pill btn-shadow btn-hover-shine btn-secondary btn-lg" [disabled]="!registerForm.valid">Create Account
+            </button>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="text-center text-white opacity-8 mt-3">
+        Copyright © MYBOS DEMO
+      </div>
+    </div>
+  </div>
+</div>

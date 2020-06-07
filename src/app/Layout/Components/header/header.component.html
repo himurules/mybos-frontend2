@@ -1,0 +1,76 @@
+<div class="healer-container">
+  <div class="header">
+    <div class="container-fluid">
+      <div class="logo pull-left hidden-sm hidden-xs">
+        <img ng-src="https://data.mybos.com/9/2020-04-04/2HHYN46AYA.png" src="https://data.mybos.com/9/2020-04-04/2HHYN46AYA.png">
+      </div>
+      <div class="header-feature pull-left">
+        <ul class="list-inline am-slide-left">
+          <li><a class="icon header-menu" href="#"></a></li>
+          <li class="" style="">
+            <a class="icon head mobile" href="#" title="Calculator"></a>
+          </li>
+          <li class="ng-scope" style="">
+            <a class="icon head community" href="#" title="Community" ></a>
+          </li>
+          <li class="ng-scope">
+            <a class="icon head notice" href="#" title="Broadcast"></a>
+          </li>
+          <li class="ng-scope">
+            <a class="icon head booking" href="#" title="Shift Log" ></a>
+          </li>
+          <li class="ng-scope">
+            <a class="header-icon lobby" href="#" title="Lobby Screen">
+              <img src="https://app.mybos.com/assets/img/icons/lobby-screen-icon.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="time-weather pull-left hidden-md hidden-xs ng-binding">
+        <span class="hours ng-binding">{{ myDate | date:'shortTime' }}</span>
+        {{ myDate | date: 'EEEE, MMMM d, y' }}
+      </div>
+
+      <div class="dropdown user-action pull-right">
+        <p class="ng-binding dropdown-toggle" data-toggle="dropdown">
+           &nbsp;{{ username | titlecase }}
+          <a class="icon drop-down" href="#"></a>
+        </p>
+        <ul class="dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Change Password</a></li>
+          <li><a href="#" (click)="logout($event)">Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown user-action pull-right">
+        <p class="ng-binding dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-bell-o"></i>
+          <span class="badge ng-binding" ng-show="notifyCount > 0" style="">10</span>
+        </p>
+        <ul class="dropdown-menu text-info">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            03/06/2020 03:02 PM: l am test resident has added a new comment in Epic
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            03/06/2020 02:02 PM: connor hogan has added a new comment in Epic
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            03/06/2020 01:02 PM: san tosh has added a new comment in Epic
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown user-action pull-right">
+        <p class="ng-binding dropdown-toggle" data-toggle="dropdown">
+          English
+          <a class="icon drop-down" href="#"></a>
+        </p>
+        <ul class="dropdown-menu">
+          <li><a href="#">English</a></li>
+          <li><a href="#" >Spanish  (Spanish)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

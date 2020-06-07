@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block summary">
+      <div class="block-heading">
+        Building Summary
+        <div class="block-control">
+        </div>
+      </div>
+      <div class="alert alert-danger text-center" [hidden]="!error">
+        {{ error }}
+      </div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" ng-show="loading" style=""></div>
+        <ul class="list-unstyled">
+          <li class="ng-scope" href="#" style="">
+            Residents<span class="ng-binding">{{ summary.residents }}</span>
+          </li>
+          <li class="ng-scope" href="#" style="">
+            Assets<span class="ng-binding">{{ summary.assets }}</span>
+          </li>
+          <li class="ng-scope" href="#" style="">
+            Contractors<span class="ng-binding">{{ summary.contractors }}</span>
+          </li>
+          <li class="ng-scope" href="#" style="">
+            Active Cases<span class="ng-binding">{{ summary.activeCases }}</span>
+          </li>
+          <li class="ng-scope" href="#" style="">
+            Work Orders Sent<span class="ng-binding">{{ summary.workOrders }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

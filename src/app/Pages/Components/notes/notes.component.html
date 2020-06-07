@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block todo">
+      <div class="block-heading">
+        <span >Notes</span>
+        <i href="#" class="note-add-ico mb-ico ico-add-circle pull-right" ></i>
+      </div>
+      <div class="alert alert-danger text-center" [hidden]="!error">
+        {{ error }}
+      </div>
+      <div class="drop-down-content newnote-form ng-isolate-scope ng-hide">
+        <div class="app-lock ng-hide"></div>
+        <i class="angle right"></i>
+        <form name="newNoteForm" class="ng-pristine ng-invalid ng-invalid-required">
+          <div class="form-group">
+            <textarea class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required=""></textarea>
+          </div>
+          <div class="text-right">
+            <button class="mb-button red small" type="submit" disabled="disabled">Add</button>
+          </div>
+        </form>
+      </div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" style=""></div>
+        <div class="todo-compose">
+          <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" placeholder="Type to search" ng-model="searchNote">
+        </div>
+        <div class="todo-list jquery-scroll ng-isolate-scope " tabindex="-1">
+          <div class="scroll-content">
+            <div ng-transclude="">
+              <div class="todo-item am-fade ng-scope" style="" *ngFor="let note of notes">
+                <i class="fa fa-trash-o pull-right ng-isolate-scope" confirm="Are you sure you want to remove this note?"></i>
+                <div class="todo-writer">{{ note.users.name }} - {{ note.created_at | date}}</div>
+                <p ng-bind-html="note.note">{{ note.note | slice:0:60 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mb-2">
+        <ngb-pagination
+          [collectionSize]="size"
+          [(page)]="page"
+          (pageChange)="getPageFromService($event)"
+          [pageSize]="pageSize"
+          aria-label="Default pagination"></ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="block calendar">
+  <div class="block-heading">
+    <a class="mb-ico ico-add-circle pull-right" href="#"></a>
+    <span >Calendar</span>
+  </div>
+  <div class="block-action right drop-down-content am-fade ng-hide">
+    <i class="angle right"></i>
+    <ul>
+      <li><a href="#">New Maintenance</a></li>
+      <li><a href="#">New Booking</a></li>
+      <li><a href="#">Reminder</a></li>
+    </ul>
+  </div>
+  <div class="block-control">
+    <!--
+    <a class="icon holder white"></a>
+    -->
+  </div>
+  <div class="block-body">
+    <div class="mb-calendar ng-empty ng-valid" ng-model="calendarTime" style="">
+      <div class="mb-calendar-head ng-binding">
+        June
+      </div>
+      <div class="mb-calendar-body">
+        <table>
+          <thead>
+          <tr class="day-week">
+            <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="week ng-scope" style="">
+            <!-- ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">31</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">1</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">2</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">3</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">4</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope today current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">5</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">6</div>
+          </td><!-- end ngRepeat: day in week.days -->
+          </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="week ng-scope">
+            <!-- ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">7</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">8</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">9</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">10</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">11</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">12</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">13</div>
+          </td><!-- end ngRepeat: day in week.days -->
+          </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="week ng-scope">
+            <!-- ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">14</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">15</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">16</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">17</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">18</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">19</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">20</div>
+          </td><!-- end ngRepeat: day in week.days -->
+          </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="week ng-scope">
+            <!-- ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">21</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">22</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">23</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">24</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">25</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">26</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">27</div>
+          </td><!-- end ngRepeat: day in week.days -->
+          </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="week ng-scope">
+            <!-- ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">28</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">29</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope current" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">30</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">1</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">2</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">3</div>
+          </td><!-- end ngRepeat: day in week.days --><td ng-repeat="day in week.days" class="day ng-scope" ng-class="{'today':day.isToday,'current':day.isCurrentMonth}" ng-click="goToMainCalendar(day)">
+            <div class="day-number ng-binding">4</div>
+          </td><!-- end ngRepeat: day in week.days -->
+          </tr><!-- end ngRepeat: week in weeks -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

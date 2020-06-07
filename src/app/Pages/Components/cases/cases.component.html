@@ -1,0 +1,69 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<div class="main-card mb-3 card">
+  <div class="card-header">
+    Cases
+  </div>
+  <div class="table-responsive">
+    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+      <thead>
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">Added</th>
+        <th class="text-center">Subject</th>
+        <th class="text-center">Type</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Assigned Contractors</th>
+        <th class="text-center">Priority</th>
+        <th class="text-center">Attachments</th>
+        <th class="text-center">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let case of cases">
+        <td class="text-center text-muted" style="width: 80px;">#{{ case.id }}</td>
+        <td class="text-center" style="width: 80px;">
+            {{ case.created_at | date }}
+        </td>
+        <td class="text-center"><a [routerLink]="">{{ case.subject }}</a></td>
+        <td class="text-center"><a [routerLink]="">{{ case.type }}</a></td>
+        <td class="text-center">
+          <div class="badge badge-pill badge-danger {{case.status | replaceSpace | lowercase}}">{{ case.status | titlecase}}</div>
+        </td>
+        <td class="text-center">
+          {{ case.category }}
+        </td>
+        <td class="text-center" style="width: 200px;">
+          {{ case.priority | titlecase}}
+        </td>
+        <td>
+            <i class="fa fa-paperclip"></i>
+        </td>
+        <td class="text-center">
+          <div role="group" class="btn-group-sm btn-group">
+            <button class="btn-shadow btn btn-primary">Details</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <ngb-pagination
+    [collectionSize]="size"
+    [(page)]="page"
+    (pageChange)="getPageFromService($event)"
+    [pageSize]="pageSize"
+    aria-label="Default pagination"></ngb-pagination>
+</div>
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+  <div class="loaded-content" [class.blurred]="showSpinner">
+    <div class="block report">
+      <div class="block-heading">Management Reports Generated</div>
+      <div class="block-body">
+        <div class="app-content-loading ng-hide" style=""></div>
+        <div class="require-action-list jquery-scroll ng-isolate-scope mb-scroller" data-scrollbar="true" tabindex="-1">
+          <div class="scroll-content">
+            <div ng-transclude="">
+              <table class="full-width no-hover ng-scope">
+                <tbody>
+                <tr class="ng-scope" style="" *ngFor="let report of reportsGenerated let i = index">
+                  <td><i class="mb-ico ico-word-circle"></i></td>
+                  <td><span class="time-range ng-binding">Report Period {{ report.from }} - {{ report.to }}</span></td>
+                  <td class="hide-on-1400 ng-binding">Created: {{ report.created | date }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

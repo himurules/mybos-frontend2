@@ -1,0 +1,30 @@
+// BOOTSTRAP 4 VARIABLES
+
+@import "components/bootstrap4/functions";
+@import "components/bootstrap4/variables";
+@import "components/bootstrap4/mixins";
+
+// MYBOSUI Themes Variables
+
+@import "themes/layout-variables";
+
+// BOOTSTRAP 4 IMPORTS
+
+@import "components/bootstrap4/root";
+@import "components/bootstrap4/custom-forms";
+@import "components/bootstrap4/modal";
+@import "components/bootstrap4/utilities";
+
+// LAYOUT
+
+@import "layout/layout";
+
+// UTILS
+
+@import "utils/helpers";
+@import "utils/backgrounds";
+@import "utils/animate";
+@import "utils/comps-animations";
+
+// PAGES
+@import "pages/userpages";
